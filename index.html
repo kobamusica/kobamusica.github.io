@@ -1,11 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <title>Koba Música</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kobaMúsica</title>
+  <style>
+    :root{
+      --bg:#f7f6f3;
+      --paper:#fff;
+      --ink:#1f2937;
+      --muted:#6b7280;
+      --line:#d1d5db;
+      --accent:#1d4ed8;
+      --accent-soft:#dbeafe;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.75;
+    }
+    .wrap{
+      max-width:860px;
+      margin:0 auto;
+      padding:32px 20px 56px;
+    }
+    article{
+      background:var(--paper);
+      padding:40px 44px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    h1{
+      margin:0 0 8px;
+      font-size:clamp(2.2rem, 5vw, 3rem);
+      line-height:1.1;
+      letter-spacing:-0.02em;
+    }
+    .subtitle{
+      margin:0 0 28px;
+      color:var(--muted);
+      font-size:1.04rem;
+    }
+    p{
+      margin:0 0 1.15rem;
+      font-size:1.08rem;
+    }
+    .lead{
+      font-size:1.16rem;
+    }
+    .block{
+      margin-top:2rem;
+      padding-top:1.4rem;
+      border-top:1px solid var(--line);
+    }
+    footer{
+      margin-top:2.4rem;
+      padding-top:1.2rem;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+    a:hover{
+      text-decoration:underline;
+    }
+    @media (max-width:680px){
+      article{padding:26px 20px}
+      p{font-size:1rem}
+      .lead{font-size:1.05rem}
+    }
+  </style>
 </head>
 <body>
-  <h1>Koba Música</h1>
-  <p>Site em construção.</p>
+  <div class="wrap">
+    <article>
+      <h1>kobaMúsica</h1>
+      <p class="subtitle">Pesquisa pública em música: teoria, história, cognição e currículo.</p>
+
+      <p class="lead">
+        Um arquivo digital dedicado à divulgação gratuita de conhecimento musical teórico, com ênfase em temas pouco explorados em português.
+      </p>
+
+      <div class="block">
+        <p>
+          Este site reúne textos de pesquisa, ensaios, notas de estudo e materiais de referência
+          voltados à compreensão da música como campo de pensamento. O foco principal está em
+          questões de teoria musical, história das ideias musicais, cognição, educação musical e
+          circulação de conceitos no contexto brasileiro.
+        </p>
+
+        <p>
+          Todo o conteúdo é disponibilizado gratuitamente. Não há cobrança, área paga nem exigência
+          de cadastro para leitura. A proposta é simples: tornar o conhecimento acessível, legível e
+          publicamente disponível, sem abrir mão de rigor intelectual.
+        </p>
+
+        <p>
+          Seja bem-vindo. Explore o conteúdo com calma.
+        </p>
+      </div>
+
+      <footer>
+        kobamusica.com.br
+      </footer>
+    </article>
+  </div>
 </body>
 </html>
