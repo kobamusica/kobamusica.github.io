@@ -16,6 +16,7 @@
       --shadow:0 10px 30px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: Georgia, "Times New Roman", serif;
@@ -30,9 +31,40 @@
     }
     article{
       background:var(--paper);
-      padding:40px 44px;
       border:1px solid var(--line);
       box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(to bottom, #ffffff, #fafafa);
+      padding:14px 22px;
+    }
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      align-items:center;
+      font-size:.98rem;
+    }
+    .nav a{
+      color:var(--muted);
+      text-decoration:none;
+      padding:4px 0;
+      border-bottom:2px solid transparent;
+      transition:.15s ease;
+    }
+    .nav a:hover{
+      color:var(--accent);
+      border-bottom-color:var(--accent-soft);
+    }
+    .nav a.active{
+      color:var(--ink);
+      font-weight:600;
+      border-bottom-color:var(--accent);
+    }
+    .content{
+      padding:40px 44px;
     }
     h1{
       margin:0 0 8px;
@@ -66,50 +98,62 @@
     }
     a{
       color:var(--accent);
-      text-decoration:none;
     }
-    a:hover{
-      text-decoration:underline;
+    .domain{
+      letter-spacing:.01em;
     }
     @media (max-width:680px){
-      article{padding:26px 20px}
+      .content{padding:26px 20px}
+      .topbar{padding:12px 16px}
       p{font-size:1rem}
       .lead{font-size:1.05rem}
+      .nav{gap:8px 14px;font-size:.95rem}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <article>
-      <h1>kobaMúsica</h1>
-      <p class="subtitle">Pesquisa pública em música: teoria, história, cognição e currículo.</p>
-
-      <p class="lead">
-        Um arquivo digital dedicado à divulgação gratuita de conhecimento musical teórico, com ênfase em temas pouco explorados em português.
-      </p>
-
-      <div class="block">
-        <p>
-          Este site reúne textos de pesquisa, ensaios, notas de estudo e materiais de referência
-          voltados à compreensão da música como campo de pensamento. O foco principal está em
-          questões de teoria musical, história das ideias musicais, cognição, educação musical e
-          circulação de conceitos no contexto brasileiro.
-        </p>
-
-        <p>
-          Todo o conteúdo é disponibilizado gratuitamente. Não há cobrança, área paga nem exigência
-          de cadastro para leitura. A proposta é simples: tornar o conhecimento acessível, legível e
-          publicamente disponível, sem abrir mão de rigor intelectual.
-        </p>
-
-        <p>
-          Seja bem-vindo. Explore o conteúdo com calma.
-        </p>
+      <div class="topbar">
+        <nav class="nav" aria-label="Menu principal">
+          <a class="active" href="/">Home</a>
+          <a href="/">Textos</a>
+          <a href="/">Contato</a>
+        </nav>
       </div>
 
-      <footer>
-        kobamusica.com.br
-      </footer>
+      <div class="content">
+        <h1>kobaMúsica</h1>
+        <p class="subtitle">Pesquisa pública em música: teoria, história, cognição e currículo.</p>
+
+        <p class="lead">
+          Um arquivo digital dedicado à divulgação gratuita de conhecimento musical teórico,
+          com ênfase em temas pouco explorados em português.
+        </p>
+
+        <div class="block">
+          <p>
+            Este site reúne textos de pesquisa, ensaios, notas de estudo e materiais de referência
+            voltados à compreensão da música como campo de pensamento. O foco principal está em
+            questões de teoria musical, história das ideias musicais, cognição, educação musical e
+            circulação de conceitos no contexto brasileiro.
+          </p>
+
+          <p>
+            Todo o conteúdo é disponibilizado gratuitamente. Não há cobrança, área paga nem exigência
+            de cadastro para leitura. A proposta é simples: tornar o conhecimento acessível, legível e
+            publicamente disponível, sem abrir mão de rigor intelectual.
+          </p>
+
+          <p>
+            Seja bem-vindo. Explore o conteúdo com calma.
+          </p>
+        </div>
+
+        <footer>
+          <span class="domain">kobamusica.com.br</span>
+        </footer>
+      </div>
     </article>
   </div>
 </body>
