@@ -14,13 +14,25 @@
 
 Abre com a pergunta direta: talento existe? Não para respondê-la imediatamente, mas para mostrar que a palavra esconde várias coisas diferentes — e que a resposta depende do que você está perguntando.
 
-Apresenta os componentes identificados pela ciência: sensibilidade à estrutura musical, memória, integração sensoriomotora, aptidão auditiva, disposição para praticar. Mostra que são sub-habilidades independentes — alguém pode ter umas e não ter outras — e que isso desfaz a ideia binária de "tem talento / não tem talento".
+Usa a história do debate científico como espinha dorsal narrativa. Em vez de apresentar os dados como lista de achados, o artigo os apresenta como episódios de um debate em curso — o que dá ao leitor a sensação de acompanhar um processo vivo, não receber verdades prontas. A linha do tempo que as fontes permitem contar:
 
-Apresenta o dado dos gêmeos de Mosing: a aptidão auditiva tem base predominantemente genética. A própria tendência a praticar também. Isso é perturbador e vale desenvolver com cuidado.
+**1993 — o divisor de águas.** Ericsson publica o estudo com violinistas de Berlim. A conclusão que vira manchete: o que parecia dom é produto de prática deliberada intensa. O talento inato é descartado como variável explicativa. É o momento em que a ciência se alinha com o senso igualitário — qualquer um pode, se treinar certo.
+
+**2008 — a distorção popular.** Gladwell publica *Outliers* e inventa o número "10.000 horas". O argumento de Ericsson, já simplificado, é simplificado mais uma vez. O número vira lei, vira título de palestra, vira promessa de que o esforço garante resultado. O problema: não é o que o estudo dizia.
+
+**2013–2014 — o contraponto empírico.** Hambrick e MacNamara, independentemente, reanalizam os dados. O resultado: prática deliberada explica 21–30% do desempenho musical. Efeito real, efeito importante — mas os 70% restantes não têm explicação. No mesmo período, Mosing publica o estudo com 10.539 gêmeos suecos: aptidão auditiva é predominantemente genética, e a própria disposição para praticar também tem base hereditária. O talento, descartado em 1993, volta pela porta dos fundos — desta vez com método mais robusto.
+
+**2019 — o retorno ao ponto de partida.** MacNamara e Maitra refazem o estudo original de Ericsson com método mais rigoroso — duplo-cego, pré-registrado. Não encontram a "correspondência completa" entre prática e nível que o original alegava. O efeito da prática é real, mas consideravelmente menor. O experimento fundador do campo não se replica como foi descrito.
+
+**Hoje — onde o debate está.** Sem vencedor declarado. A prática importa e tem efeito mensurável. Fatores individuais também importam e têm base parcialmente genética. O modelo mais honesto disponível — o DMGT de Gagné, aplicado à música por McPherson & Williamon — propõe que os dois interagem, junto com motivação, contexto e acaso. Nenhum fator sozinho determina o resultado.
+
+A narrativa histórica cumpre uma função editorial importante: explica por que respostas simples — "é tudo prática" ou "é tudo talento" — continuam circulando mesmo sendo insuficientes. Cada uma capturou um momento real do debate e foi congelada antes que o debate avançasse.
+
+Dentro dessa estrutura narrativa, apresenta os componentes identificados pela ciência: sensibilidade à estrutura musical, memória, integração sensoriomotora, aptidão auditiva, disposição para praticar. Mostra que são sub-habilidades independentes — alguém pode ter umas e não ter outras — e que isso desfaz a ideia binária de "tem talento / não tem talento".
 
 Encerra com a distinção do modelo DMGT: aptidão natural (ponto de partida) não é o mesmo que talento desenvolvido (resultado). Aptidão sem prática, contexto e motivação não vira nada. Prática sem nenhuma aptidão não chega ao mesmo lugar que prática com aptidão. Os dois fatores são reais.
 
-**Por que funciona editorialmente:** é o artigo mais "enciclopédico" do conjunto — o que o leitor vai querer reler como referência. Tem densidade suficiente para o músico curioso e é acessível o suficiente para o leigo.
+**Por que funciona editorialmente:** é o artigo mais "enciclopédico" do conjunto — o que o leitor vai querer reler como referência. A espinha dorsal narrativa transforma uma lista de achados científicos em uma história com personagens, viradas e estado atual do debate. Tem densidade suficiente para o músico curioso e é acessível o suficiente para o leigo.
 
 ---
 
