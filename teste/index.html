@@ -148,6 +148,26 @@
       background: var(--cor-fundo-suave); /* O fundo suave escuro já definido no tema */
       color: var(--cor-texto);
     }
+    /* Estilos para Citações e Definições (Blockquotes do Markdown) */
+    .artigo blockquote {
+      background: var(--cor-fundo-suave);
+      border-left: 3px solid var(--cor-destaque);
+      padding: var(--esp-3) var(--esp-4);
+      margin: var(--esp-4) 0;
+      font-size: 0.9375rem;
+      color: var(--cor-texto);
+    }
+    
+    /* Remove a margem extra do parágrafo dentro da citação para manter o bloco enxuto */
+    .artigo blockquote p {
+      margin: 0; 
+    }
+    
+    /* Destaca termos em negrito dentro da definição com a fonte de título */
+    .artigo blockquote strong {
+      font-family: var(--fonte-titulo);
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
