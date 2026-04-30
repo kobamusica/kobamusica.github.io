@@ -174,7 +174,8 @@
   async function carregarMarkdown() {
     const container = document.getElementById('conteudo-artigo');
     try {
-      const response = await fetch('texto.md');
+      // O Date.now() cria um número único baseado no milissegundo atual
+      const response = await fetch('texto.md?v=' + Date.now());
       
       if (!response.ok) {
         throw new Error(`Não foi possível carregar o arquivo (Status: ${response.status}).`);
