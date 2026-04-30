@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leitor de Markdown — kobamusica</title>
+  <title>Biblioteca — kobamusica</title>
   
+  <!-- Biblioteca para converter Markdown em HTML -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <style>
@@ -33,7 +34,7 @@
       --cor-texto: #E5E1D8;
       --cor-texto-suave: #A3A3A3; 
       --cor-borda: #333333; 
-      --cor-destaque: #C9A38B; /* Usando o destaque mais suave para melhor legibilidade no preto */
+      --cor-destaque: #C9A38B; 
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -49,7 +50,7 @@
       -webkit-font-smoothing: antialiased; 
       -moz-osx-font-smoothing: grayscale; 
       text-rendering: optimizeLegibility;
-      transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave ao trocar de tema */
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
     
     /* Header e Navegação */
@@ -73,19 +74,37 @@
       font-size: 0.8rem;
       transition: all 0.2s;
     }
-    .btn-tema:hover {
-      border-color: var(--cor-destaque);
-      color: var(--cor-destaque);
-    }
+    .btn-tema:hover { border-color: var(--cor-destaque); color: var(--cor-destaque); }
 
-    /* Container Principal do Artigo */
-    .artigo { max-width: var(--largura-conteudo); margin: 0 auto; padding: var(--esp-5) var(--esp-3) var(--esp-7); }
+    /* Área Principal */
+    .container-principal { max-width: var(--largura-conteudo); margin: 0 auto; padding: var(--esp-5) var(--esp-3) var(--esp-7); }
     
-    /* Estilização para o HTML gerado via Markdown */
-    .artigo h1 {
-      font-family: var(--fonte-titulo); font-size: 2rem; line-height: 1.15; font-weight: 700; letter-spacing: -.015em;
-      margin: 0 0 var(--esp-3); padding-bottom: var(--esp-4); border-bottom: 1px solid var(--cor-borda);
+    /* Estilos do Índice (Lista de Arquivos) */
+    .titulo-indice { font-family: var(--fonte-titulo); font-size: 2rem; margin: 0 0 var(--esp-4); }
+    .grid-artigos { display: flex; flex-direction: column; gap: var(--esp-3); }
+    .card-artigo { 
+      display: block; 
+      padding: var(--esp-4); 
+      border: 1px solid var(--cor-borda); 
+      border-radius: 6px; 
+      text-decoration: none; 
+      color: var(--cor-texto); 
+      transition: all 0.2s ease; 
+      background: var(--cor-fundo);
     }
+    .card-artigo:hover { border-color: var(--cor-destaque); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    body.tema-escuro .card-artigo:hover { box-shadow: 0 4px 12px rgba(255,255,255,0.05); }
+    .card-artigo h2 { font-family: var(--fonte-titulo); margin: 0 0 var(--esp-1); font-size: 1.25rem; }
+    .card-artigo p { margin: 0; font-family: var(--fonte-titulo); font-size: 0.85rem; color: var(--cor-texto-suave); }
+
+    /* Estilos do Artigo Aberto */
+    .btn-voltar { 
+      display: inline-block; margin-bottom: var(--esp-5); font-family: var(--fonte-titulo); 
+      font-size: 0.9rem; color: var(--cor-destaque); text-decoration: none; font-weight: 600;
+    }
+    .btn-voltar:hover { text-decoration: underline; text-underline-offset: 4px; }
+    
+    .artigo h1 { font-family: var(--fonte-titulo); font-size: 2rem; line-height: 1.15; font-weight: 700; letter-spacing: -.015em; margin: 0 0 var(--esp-3); padding-bottom: var(--esp-4); border-bottom: 1px solid var(--cor-borda); }
     .artigo h2 { font-family: var(--fonte-titulo); font-size: 1.375rem; line-height: 1.25; font-weight: 700; letter-spacing: -.01em; margin: var(--esp-6) 0 var(--esp-3); }
     .artigo p { margin: 0 0 var(--esp-3); }
     .artigo ul, .artigo ol { margin: 0 0 var(--esp-3); padding-left: var(--esp-4); }
@@ -93,19 +112,14 @@
     .artigo a { color: var(--cor-destaque); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
     .artigo hr { border: 0; border-top: 1px solid var(--cor-borda); margin: var(--esp-5) 0; }
     .artigo strong { font-weight: 600; color: var(--cor-texto); }
-    
-    /* Alertas e status visuais (Útil para o documento interno de trabalho) */
-    .artigo p:has(strong:contains("Status:")) {
-      font-style: italic; color: var(--cor-texto-suave); font-family: var(--fonte-titulo); font-size: .9375rem;
-    }
+    .artigo p:has(strong:contains("Status:")) { font-style: italic; color: var(--cor-texto-suave); font-family: var(--fonte-titulo); font-size: .9375rem; }
     
     .site-footer { border-top: 1px solid var(--cor-borda); padding: var(--esp-4) var(--esp-3); font-family: var(--fonte-titulo); font-size: .8125rem; color: var(--cor-texto-suave); }
     .site-footer__inner { max-width: var(--largura-conteudo-largo); margin: 0 auto; text-align: center; }
     
-    /* Media Queries */
     @media(min-width: 640px) {
       :root { --tam-base: 1.125rem; }
-      .artigo { padding: var(--esp-6) var(--esp-3) var(--esp-7); }
+      .container-principal { padding: var(--esp-6) var(--esp-3) var(--esp-7); }
       .artigo h1 { font-size: 2.5rem; }
       .artigo h2 { font-size: 1.5rem; }
     }
@@ -116,45 +130,77 @@
 
 <header class="site-header">
   <div class="site-header__inner">
-    <p class="site-header__title"><a href="/">kobamusica (Preview MD)</a></p>
+    <p class="site-header__title"><a href="#" id="link-logo">kobamusica</a></p>
     <nav class="site-nav" aria-label="Navegação principal">
-      <a href="#">Artigos</a>
-      <a href="#">Glossário</a>
-      <a href="#">Sobre</a>
+      <a href="#" id="link-indice">Índice</a>
       <button id="btn-alternar-tema" class="btn-tema" aria-label="Alternar tema escuro/claro">🌙 Escuro</button>
     </nav>
   </div>
 </header>
 
-<main>
-  <article class="artigo" id="conteudo-artigo">
-    <p style="font-family: var(--fonte-titulo); color: var(--cor-texto-suave); text-align: center; margin-top: var(--esp-5);">
-      Procurando e carregando <strong>texto.md</strong>...
-    </p>
-  </article>
+<main class="container-principal">
+  
+  <!-- TELA 1: ÍNDICE DE ARQUIVOS -->
+  <div id="tela-indice">
+    <h1 class="titulo-indice">Documentos de Trabalho</h1>
+    <div id="lista-arquivos" class="grid-artigos">
+      <!-- Os botões serão injetados aqui pelo JavaScript -->
+    </div>
+  </div>
+
+  <!-- TELA 2: LEITURA DO ARTIGO (Inicia oculta) -->
+  <div id="tela-artigo" style="display: none;">
+    <a href="#" class="btn-voltar">← Voltar ao Índice</a>
+    <article class="artigo" id="conteudo-artigo">
+      <!-- O texto markdown formatado aparecerá aqui -->
+    </article>
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <p>kobamusica · renderizador de markdown · ambiente local</p>
+    <p>kobamusica · visualizador dinâmico de markdown</p>
   </div>
 </footer>
 
 <script>
-  // Lógica do Modo Escuro
+  /* ========================================================================
+     1. BANCO DE DADOS DOS ARQUIVOS (Você precisa atualizar esta lista)
+     ======================================================================== */
+  const arquivosCadastrados = [
+    { 
+      nomeArquivo: 'texto.md', 
+      titulo: 'Perguntas e respostas sobre talento musical',
+      descricao: 'Base de conhecimento para decisões editoriais'
+    },
+    { 
+      nomeArquivo: 'sugestoes.md', 
+      titulo: 'Sugestões de artigos',
+      descricao: 'Base de conhecimento para decisões editoriais'
+    }
+    // Para adicionar novos arquivos, copie o bloco acima e cole abaixo, alterando os dados. Exemplo:
+    // { 
+    //   nomeArquivo: 'outro.md', 
+    //   titulo: 'Série Harmônica',
+    //   descricao: 'Fenômeno físico por trás do timbre'
+    // },
+  ];
+
+
+  /* ========================================================================
+     2. LÓGICA DO TEMA ESCURO/CLARO
+     ======================================================================== */
   const btnTema = document.getElementById('btn-alternar-tema');
   const body = document.body;
 
-  // Verifica se o usuário já havia escolhido o tema escuro anteriormente
   if (localStorage.getItem('tema-koba') === 'escuro') {
     body.classList.add('tema-escuro');
     btnTema.textContent = '☀️ Claro';
   }
 
-  // Alterna o tema ao clicar no botão
   btnTema.addEventListener('click', () => {
     body.classList.toggle('tema-escuro');
-    
     if (body.classList.contains('tema-escuro')) {
       localStorage.setItem('tema-koba', 'escuro');
       btnTema.textContent = '☀️ Claro';
@@ -164,38 +210,80 @@
     }
   });
 
-  // Configuração do Marked.js
-  marked.use({
-    breaks: true,
-    gfm: true
-  });
 
-  // Lógica para carregar o Markdown
-  async function carregarMarkdown() {
-    const container = document.getElementById('conteudo-artigo');
+  /* ========================================================================
+     3. RENDERIZAÇÃO E NAVEGAÇÃO (Roteador via Hash)
+     ======================================================================== */
+  marked.use({ breaks: true, gfm: true });
+
+  const telaIndice = document.getElementById('tela-indice');
+  const telaArtigo = document.getElementById('tela-artigo');
+  const conteudoArtigo = document.getElementById('conteudo-artigo');
+  const listaHtml = document.getElementById('lista-arquivos');
+
+  // Monta a tela inicial com os botões
+  function renderizarIndice() {
+    telaIndice.style.display = 'block';
+    telaArtigo.style.display = 'none';
+    listaHtml.innerHTML = ''; // Limpa a lista antes de montar
+
+    arquivosCadastrados.forEach(item => {
+      const link = document.createElement('a');
+      link.href = `#${item.nomeArquivo}`; // O clique adiciona #nome.md na URL
+      link.className = 'card-artigo';
+      link.innerHTML = `
+        <h2>${item.titulo}</h2>
+        <p>${item.descricao} <br> <span style="opacity: 0.6; font-size: 0.75rem; margin-top: 4px; display: block;">📄 ${item.nomeArquivo}</span></p>
+      `;
+      listaHtml.appendChild(link);
+    });
+  }
+
+  // Busca o arquivo e mostra na tela de leitura
+  async function carregarArtigo(nomeArquivo) {
+    telaIndice.style.display = 'none';
+    telaArtigo.style.display = 'block';
+    
+    conteudoArtigo.innerHTML = `<p style="text-align:center; color:var(--cor-texto-suave);">Carregando <strong>${nomeArquivo}</strong>...</p>`;
+    window.scrollTo(0, 0); // Joga a tela pro topo
+
     try {
-      // O Date.now() cria um número único baseado no milissegundo atual
-      const response = await fetch('texto.md?v=' + Date.now());
-      
-      if (!response.ok) {
-        throw new Error(`Não foi possível carregar o arquivo (Status: ${response.status}).`);
-      }
+      const response = await fetch(nomeArquivo + '?v=' + Date.now()); // Date.now() evita cache antigo
+      if (!response.ok) throw new Error(`Status: ${response.status}`);
       
       const markdownTexto = await response.text();
-      container.innerHTML = marked.parse(markdownTexto);
+      conteudoArtigo.innerHTML = marked.parse(markdownTexto);
       
     } catch (erro) {
-      console.error(erro);
-      container.innerHTML = `
+      conteudoArtigo.innerHTML = `
         <div style="background: var(--cor-fundo-suave); border-left: 3px solid var(--cor-destaque); padding: 1rem; font-family: var(--fonte-titulo);">
           <h2 style="margin-top: 0; font-size: 1.1rem; color: var(--cor-texto);">Erro ao carregar o arquivo</h2>
-          <p style="margin-bottom: 0.5rem; color: var(--cor-texto);">Não foi possível encontrar ou carregar o arquivo <strong>texto.md</strong>.</p>
+          <p style="margin-bottom: 0.5rem; color: var(--cor-texto);">Não foi possível encontrar <strong>${nomeArquivo}</strong>. Verifique se ele está cadastrado corretamente na lista e se já fez o upload para o GitHub.</p>
         </div>
       `;
     }
   }
 
-  window.addEventListener('DOMContentLoaded', carregarMarkdown);
+  // O "Roteador" verifica a URL e decide o que mostrar
+  function roteador() {
+    const hash = window.location.hash.substring(1); // Pega o texto depois do #
+    if (hash && hash.endsWith('.md')) {
+      carregarArtigo(hash);
+    } else {
+      renderizarIndice();
+    }
+  }
+
+  // Escuta as mudanças no topo da página e os botões de voltar
+  window.addEventListener('hashchange', roteador);
+  
+  // Ao carregar a página pela primeira vez, aciona o roteador
+  window.addEventListener('DOMContentLoaded', roteador);
+
+  // Faz a logo e o botão "Índice" do topo voltarem para a home (limpando a URL)
+  document.getElementById('link-logo').addEventListener('click', (e) => { e.preventDefault(); window.location.hash = ''; });
+  document.getElementById('link-indice').addEventListener('click', (e) => { e.preventDefault(); window.location.hash = ''; });
+
 </script>
 
 </body>
