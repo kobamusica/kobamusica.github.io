@@ -1,0 +1,30 @@
+<svg width="258.5mm" height="130mm" viewBox="0 0 258.5 130" xmlns="http://www.w3.org/2000/svg">
+  <rect id="white_F_1" x="0.000" y="0" width="23.5" height="75" fill="white" stroke="black" stroke-width="0.5"/>
+  <rect id="white_G_1" x="23.500" y="0" width="23.5" height="75" fill="white" stroke="black" stroke-width="0.5"/>
+  <rect id="white_A_1" x="47.000" y="0" width="23.5" height="75" fill="#FFCC00" stroke="black" stroke-width="0.5"/>
+  <rect id="white_B_1" x="70.500" y="0" width="23.5" height="75" fill="white" stroke="black" stroke-width="0.5"/>
+  
+  <rect id="white_C_2" x="94.000" y="0" width="23.5" height="75" fill="white" stroke="black" stroke-width="0.5"/>
+  <rect id="white_D_2" x="117.500" y="0" width="23.5" height="75" fill="white" stroke="black" stroke-width="0.5"/>
+  <rect id="white_E_2" x="141.000" y="0" width="23.5" height="75" fill="white" stroke="black" stroke-width="0.5"/>
+  <rect id="white_F_2" x="164.500" y="0" width="23.5" height="75" fill="white" stroke="black" stroke-width="0.5"/>
+  <rect id="white_G_2" x="188.000" y="0" width="23.5" height="75" fill="white" stroke="black" stroke-width="0.5"/>
+  <rect id="white_A_2" x="211.500" y="0" width="23.5" height="75" fill="white" stroke="black" stroke-width="0.5"/>
+  <rect id="white_B_2" x="235.000" y="0" width="23.5" height="75" fill="white" stroke="black" stroke-width="0.5"/>
+  
+  <rect id="black_Fs_1" x="13.225" y="0" width="13.7" height="47.5" fill="black" stroke="black" stroke-width="0.5"/>
+  <rect id="black_Gs_1" x="40.150" y="0" width="13.7" height="47.5" fill="black" stroke="black" stroke-width="0.5"/>
+  <rect id="black_As_1" x="67.075" y="0" width="13.7" height="47.5" fill="black" stroke="black" stroke-width="0.5"/>
+  <rect id="black_Cs_2" x="108.367" y="0" width="13.7" height="47.5" fill="black" stroke="black" stroke-width="0.5"/>
+  <rect id="black_Ds_2" x="136.433" y="0" width="13.7" height="47.5" fill="black" stroke="black" stroke-width="0.5"/>
+  <rect id="black_Fs_2" x="177.725" y="0" width="13.7" height="47.5" fill="black" stroke="black" stroke-width="0.5"/>
+  <rect id="black_Gs_2" x="204.650" y="0" width="13.7" height="47.5" fill="black" stroke="black" stroke-width="0.5"/>
+  <rect id="black_As_2" x="231.575" y="0" width="13.7" height="47.5" fill="black" stroke="black" stroke-width="0.5"/>
+
+  <text id="label_La2" x="58.75" y="69" font-family="Arial, sans-serif" font-size="10px" fill="black" text-anchor="middle">Lá2</text>
+
+  <text x="58.75" y="90" font-family="Arial, sans-serif" font-size="9px" fill="#444444" text-anchor="middle">1º h 110 Hz</text>
+  <text x="58.75" y="102" font-family="Arial, sans-serif" font-size="9px" fill="#444444" text-anchor="middle">2º h 220 Hz</text>
+  <text x="58.75" y="114" font-family="Arial, sans-serif" font-size="9px" fill="#444444" text-anchor="middle">3º h 330 Hz</text>
+  <text x="58.75" y="126" font-family="Arial, sans-serif" font-size="9px" fill="#444444" text-anchor="middle">4º h 440 Hz</text>
+</svg>
