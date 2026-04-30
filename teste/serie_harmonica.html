@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Controle de Cache para garantir carregamento da versão mais recente do servidor -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <title>Série harmônica — kobamusica</title>
   <meta name="description" content="O fenômeno físico por trás do timbre e da consonância: por que um violão soa diferente de um piano e por que algumas notas combinam mais do que outras.">
   <meta property="og:title" content="Série harmônica — kobamusica">
@@ -233,7 +239,7 @@
         <strong>Série harmônica:</strong> conjunto formado pela fundamental e por todos os seus harmônicos. Em teoria, a série é infinita; na prática, são os primeiros harmônicos que concentram a maior parte da energia sonora.
       </aside>
 
-      <p>Com a série harmônica apresentada, podemos agora responder às duas perguntas feitas na introdução. A primeira — o <span data-glossario="timbre">timbre</span> — diz respeito a uma única nota: é o que dá a cada instrumento sua "cor" sonora característica. A segunda — consonância e dissonância — surge da relação entre duas ou mais notas tocadas juntas.</p>
+      <p>Com a série harmônica apresentada, podemos agora responder às duas perguntas feitas na introdução. A primeira — o <span data-glossario="timbre">timbre</span> — diz respeito a uma única nota: é o que dá a cada instrumento sua "cor" sonora característica. A segunda — consonância e dissonância — surge da relação entre apontado duas ou mais notas tocadas juntas.</p>
     </section>
 
     <section>
@@ -353,6 +359,18 @@
 </footer>
 
 <script>
+// Força recarregamento de imagens para evitar cache (replicando a lógica do ?v=Date.now())
+document.addEventListener("DOMContentLoaded", () => {
+  const imagens = document.querySelectorAll('img');
+  const timestamp = Date.now();
+  imagens.forEach(img => {
+    // Aplica o timestamp apenas nas imagens locais (como os SVGs)
+    if (img.src && !img.src.includes('?v=')) {
+      img.src = img.src + '?v=' + timestamp;
+    }
+  });
+});
+
 // Lógica do Tema Escuro/Claro
 const btnTema = document.getElementById('btn-alternar-tema');
 const body = document.body;
