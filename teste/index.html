@@ -131,7 +131,7 @@
       border-collapse: collapse;
       margin: var(--esp-4) 0;
       font-size: 0.9375rem;
-      font-family: var(--fonte-titulo); /* Ou var(--fonte-corpo) dependendo da sua preferência */
+      font-family: var(--fonte-titulo);
     }
     .artigo th, .artigo td {
       padding: var(--esp-2) var(--esp-3);
@@ -143,11 +143,11 @@
       background: var(--cor-fundo-suave);
       color: var(--cor-texto);
     }
-    /* Estilo para tabelas no tema escuro (se você estiver usando a implementação de modo noturno) */
     body.tema-escuro .artigo th {
-      background: var(--cor-fundo-suave); /* O fundo suave escuro já definido no tema */
+      background: var(--cor-fundo-suave);
       color: var(--cor-texto);
     }
+
     /* Estilos para Citações e Definições (Blockquotes do Markdown) */
     .artigo blockquote {
       background: var(--cor-fundo-suave);
@@ -157,17 +157,8 @@
       font-size: 0.9375rem;
       color: var(--cor-texto);
     }
-    
-    /* Remove a margem extra do parágrafo dentro da citação para manter o bloco enxuto */
-    .artigo blockquote p {
-      margin: 0; 
-    }
-    
-    /* Destaca termos em negrito dentro da definição com a fonte de título */
-    .artigo blockquote strong {
-      font-family: var(--fonte-titulo);
-      font-weight: 600;
-    }
+    .artigo blockquote p { margin: 0; }
+    .artigo blockquote strong { font-family: var(--fonte-titulo); font-weight: 600; }
   </style>
 </head>
 <body>
@@ -204,19 +195,19 @@
 
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <p>kobamusica · visualizador dinâmico de markdown</p>
+    <p>kobamusica · visualizador dinâmico de markdown e html</p>
   </div>
 </footer>
 
 <script>
   /* ========================================================================
-     1. BANCO DE DADOS DOS ARQUIVOS (Você precisa atualizar esta lista)
+     1. BANCO DE DADOS DOS ARQUIVOS
      ======================================================================== */
   const arquivosCadastrados = [
     { 
-      nomeArquivo: 'serie_harmonica.md', 
+      nomeArquivo: 'serie_harmonica.html', 
       titulo: 'Série harmônica',
-      descricao: 'Conceito sobre a acústica do som musical'
+      descricao: 'O fenômeno físico por trás do timbre e da consonância'
     },
     { 
       nomeArquivo: 'texto.md', 
@@ -225,17 +216,10 @@
     },
     { 
       nomeArquivo: 'sugestoes.md', 
-      titulo: 'Sugestões de artigos',
-      descricao: 'Base de conhecimento para decisões editoriais'
+      titulo: 'Sugestões de artigos — Talento Musical',
+      descricao: 'Ideias de pauta e ordem de publicação'
     }
-    // Para adicionar novos arquivos, copie o bloco acima e cole abaixo, alterando os dados. Exemplo:
-    // { 
-    //   nomeArquivo: 'outro.md', 
-    //   titulo: 'Série Harmônica',
-    //   descricao: 'Fenômeno físico por trás do timbre'
-    // },
   ];
-
 
   /* ========================================================================
      2. LÓGICA DO TEMA ESCURO/CLARO
@@ -278,17 +262,27 @@
 
     arquivosCadastrados.forEach(item => {
       const link = document.createElement('a');
-      link.href = `#${item.nomeArquivo}`; // O clique adiciona #nome.md na URL
       link.className = 'card-artigo';
+      
+      // Lógica que diferencia MD de HTML
+      let tipoArquivo = '';
+      if (item.nomeArquivo.endsWith('.md')) {
+        link.href = `#${item.nomeArquivo}`; // Abre no visualizador interno
+        tipoArquivo = '📄 Markdown';
+      } else {
+        link.href = item.nomeArquivo; // Abre como uma página normal
+        tipoArquivo = '🌐 HTML Completo';
+      }
+
       link.innerHTML = `
         <h2>${item.titulo}</h2>
-        <p>${item.descricao} <br> <span style="opacity: 0.6; font-size: 0.75rem; margin-top: 4px; display: block;">📄 ${item.nomeArquivo}</span></p>
+        <p>${item.descricao} <br> <span style="opacity: 0.6; font-size: 0.75rem; margin-top: 4px; display: block;">${tipoArquivo} — ${item.nomeArquivo}</span></p>
       `;
       listaHtml.appendChild(link);
     });
   }
 
-  // Busca o arquivo e mostra na tela de leitura
+  // Busca o arquivo MD e mostra na tela de leitura
   async function carregarArtigo(nomeArquivo) {
     telaIndice.style.display = 'none';
     telaArtigo.style.display = 'block';
