@@ -124,6 +124,30 @@
       .artigo h2 { font-size: 1.5rem; }
     }
     @media(min-width: 960px) { .artigo h1 { font-size: 3rem; } }
+
+    /* Estilos para Tabelas geradas pelo Markdown */
+    .artigo table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--esp-4) 0;
+      font-size: 0.9375rem;
+      font-family: var(--fonte-titulo); /* Ou var(--fonte-corpo) dependendo da sua preferência */
+    }
+    .artigo th, .artigo td {
+      padding: var(--esp-2) var(--esp-3);
+      text-align: left;
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .artigo th {
+      font-weight: 600;
+      background: var(--cor-fundo-suave);
+      color: var(--cor-texto);
+    }
+    /* Estilo para tabelas no tema escuro (se você estiver usando a implementação de modo noturno) */
+    body.tema-escuro .artigo th {
+      background: var(--cor-fundo-suave); /* O fundo suave escuro já definido no tema */
+      color: var(--cor-texto);
+    }
   </style>
 </head>
 <body>
