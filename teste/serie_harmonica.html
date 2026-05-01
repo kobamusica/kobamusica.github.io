@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Controle de Cache para garantir carregamento da versão mais recente do servidor -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -99,7 +98,6 @@
     .glossario-callout strong{font-family:var(--fonte-titulo);font-weight:600}
     [data-glossario]{border-bottom:1px dotted var(--cor-destaque-suave);cursor:help}
     figure{margin:var(--esp-5) 0}
-    .placeholder-img{width:100%;aspect-ratio:16/9;background:var(--cor-fundo-suave);border:1px dashed var(--cor-borda);display:flex;align-items:center;justify-content:center;font-family:var(--fonte-titulo);font-size:.875rem;color:var(--cor-texto-suave);text-align:center;padding:var(--esp-3)}
     .figura-svg{background:var(--cor-fundo-suave);border:1px solid var(--cor-borda);padding:var(--esp-4) var(--esp-3);border-radius:2px; transition: border-color 0.3s ease, background-color 0.3s ease;}
     .figura-svg img{margin:0 auto}
     figcaption{font-family:var(--fonte-titulo);font-size:.8125rem;line-height:1.5;color:var(--cor-texto-suave);margin-top:var(--esp-2);font-style:italic}
@@ -167,17 +165,19 @@
     </header>
 
     <aside class="nota-didatica" role="note">
-      <strong>Nota sobre o nível de aprofundamento:</strong> este artigo usa simplificações e generalizações intencionais com fins didáticos. A série harmônica, o timbre e a consonância são fenômenos complexos, com explicações científicas que envolvem psicoacústica, física ondulatória e teoria musical formal. A opção por uma linguagem mais acessível reflete a convicção de que compreender os conceitos de forma intuitiva é o melhor ponto de partida para o leitor sem formação acadêmica em música — e que as explicações mais rigorosas fazem mais sentido quando o leitor já possui uma base musical consolidada.
+      <strong>Nota sobre o nível de aprofundamento:</strong> este artigo usa simplificações e generalizações intencionais com fins didáticos. Alguns dos conceitos apresentados — especialmente a relação entre série harmônica e consonância, e a derivação do acorde maior a partir dos harmônicos — são objeto de debate acadêmico. A percepção de consonância e dissonância envolve não apenas física acústica, mas também psicoacústica, cognição e exposição cultural. A opção por uma linguagem mais acessível e direta reflete a convicção de que compreender esses conceitos de forma intuitiva é o melhor ponto de partida para o leitor sem formação acadêmica em música — e que as explicações mais rigorosas, com suas ressalvas e controvérsias, fazem mais sentido quando o leitor já possui uma base musical consolidada.
     </aside>
 
     <section>
       <h2>Introdução</h2>
       <p>Quando uma corda esticada é posta em movimento — como num violão —, ela vibra e perturba o ar ao redor. Essa perturbação se propaga como onda sonora até chegar ao ouvido. O princípio é o mesmo para uma flauta: ao soprar, o músico faz o ar vibrar dentro do tubo, e essa vibração também se propaga como onda sonora. Quando violão e flauta tocam a mesma nota, o ouvido reconhece a similaridade — mas também percebe, sem dificuldade, que os dois sons são diferentes, ou seja, possuem <span data-glossario="timbre">timbres</span> diferentes.</p>
+      
       <p>Isso nos leva a duas perguntas:</p>
       <ul>
         <li>Por que a mesma nota — o mesmo Lá, por exemplo — soa de um jeito num violão, de outro numa flauta, de outro num piano, de outro num saxofone?</li>
         <li>Por que alguns sons combinam de um jeito tão firme, enquanto outros parecem mais ásperos, tensos ou instáveis? O acorde de Dó maior, por exemplo, é formado por três notas — Dó, Mi e Sol. Tocadas juntas, essas notas combinam.</li>
       </ul>
+      
       <p>A <span data-glossario="serie-harmonica">série harmônica</span> é uma das melhores portas de entrada para responder a essas duas perguntas. Ela ajuda a entender tanto o timbre quanto por que certos sons combinam (são <span data-glossario="consonancia">consonantes</span>) enquanto outros criam tensão ou atrito (são <span data-glossario="dissonancia">dissonantes</span>). Mas essa explicação tem limite: ela ilumina muito, sem resumir sozinha toda a história da consonância.</p>
     </section>
 
@@ -185,6 +185,7 @@
       <h2>Acústica do som musical</h2>
       <p>Quando uma corda vibra, ela empurra e puxa o ar ao redor alternadamente — e essa vibração se propaga em todas as direções, como as ondas que se formam na água quando uma pedra cai num lago. O mesmo acontece com outros instrumentos: numa flauta, é a coluna de ar dentro do tubo que vibra; num xilofone, é a barra de madeira ou metal. Em todos os casos, o princípio é o mesmo: uma fonte em vibração perturba o meio ao redor, e essa perturbação chega até o ouvido. Quando essa vibração se repete de forma regular — num padrão constante de ciclos por segundo —, temos um <strong>som periódico</strong>. É essa regularidade que permite ao ouvido perceber uma nota musical definida.</p>
       <p>A velocidade com que esse som periódico se repete é o que chamamos de <strong>frequência</strong> — medida em <strong>hertz</strong> (Hz), ou ciclos por segundo. O Lá que serve de referência para afinar instrumentos, por exemplo, vibra a <strong>440 Hz</strong>: sua vibração se repete 440 vezes a cada segundo. Quanto mais alta a frequência, mais agudo<sup class="ref-nota"><a href="#nota-1" id="ref-nota-1">[1]</a></sup> soa o som; quanto mais baixa, mais grave.<sup class="ref-nota"><a href="#nota-2" id="ref-nota-2">[2]</a></sup></p>
+      
       <div class="tabela-wrapper">
         <p class="tabela-titulo">Tabela 1: exemplos de sons graves e agudos com frequências aproximadas.</p>
         <table>
@@ -210,14 +211,14 @@
         <strong>Harmônicos:</strong> componentes sonoros produzidos simultaneamente com a fundamental, que vibram em múltiplos inteiros de sua frequência (2×, 3×, 4×…). São os harmônicos que determinam o <span data-glossario="timbre">timbre</span> de cada instrumento.
       </aside>
 
-      <p>Todos esses modos de vibração ocorrem ao mesmo tempo. O componente mais grave — a fundamental — corresponde à frequência que dá nome à nota. Os demais harmônicos se somam a ela, cada um com sua própria frequência e intensidade.</p>
-
       <figure>
         <div class="figura-svg">
           <img src="harmonicos.svg" alt="Modos de vibração de uma corda — harmônicos 1, 2, 3 e soma" style="margin: 0 auto;">
         </div>
         <figcaption>As três primeiras cordas representam, de forma isolada, o 1º, o 2º e o 3º harmônico — cada uma congelada num instante da vibração. Os pontos marcados com círculos vazados (○) indicam os <strong>nós</strong> — posições da corda que permanecem fixas durante a vibração. O 2º harmônico possui um nó no centro; o 3º harmônico possui dois nós. Cada harmônico adiciona um novo arco de vibração e, com ele, uma nova frequência. A quarta corda mostra como uma corda real se deforma nesse mesmo instante: a curva resultante é a soma simultânea dos três modos anteriores, produzindo uma forma assimétrica e mais complexa. É essa combinação de harmônicos que define o timbre do instrumento.</figcaption>
       </figure>
+
+      <p>Todos esses modos de vibração ocorrem ao mesmo tempo. O componente mais grave — a fundamental — corresponde à frequência que dá nome à nota. Os demais harmônicos se somam a ela, cada um com sua própria frequência e intensidade. A tabela abaixo mostra os primeiros harmônicos de uma fundamental em 110 Hz.</p>
 
       <div class="tabela-wrapper">
         <p class="tabela-titulo">Tabela 2: primeiros harmônicos de uma fundamental em 110 Hz.</p>
@@ -239,7 +240,7 @@
         <strong>Série harmônica:</strong> conjunto formado pela fundamental e por todos os seus harmônicos. Em teoria, a série é infinita; na prática, são os primeiros harmônicos que concentram a maior parte da energia sonora.
       </aside>
 
-      <p>Com a série harmônica apresentada, podemos agora responder às duas perguntas feitas na introdução. A primeira — o <span data-glossario="timbre">timbre</span> — diz respeito a uma única nota: é o que dá a cada instrumento sua "cor" sonora característica. A segunda — consonância e dissonância — surge da relação entre apontado duas ou mais notas tocadas juntas.</p>
+      <p>Com a série harmônica apresentada, podemos agora responder às duas perguntas feitas na introdução. A primeira — o <span data-glossario="timbre">timbre</span> — diz respeito a uma única nota: é o que dá a cada instrumento sua "cor" sonora característica. A segunda — consonância e dissonância — surge da relação entre duas ou mais notas tocadas juntas.</p>
     </section>
 
     <section>
@@ -247,6 +248,7 @@
       <p>Primeiro, vamos analisar um som individual — o que acontece dentro de uma única nota.</p>
       <p>O timbre é a característica sonora de um som. É o que permite distinguir, de ouvido, se uma nota está sendo tocada num piano ou num saxofone. Um violão e um piano tocando o mesmo Lá produzem sons com a mesma fundamental — a mesma frequência principal —, mas com harmônicos em intensidades diferentes. No violão, certos harmônicos são mais pronunciados; no piano, outros. Essa distribuição de intensidades é o que dá a cada instrumento sua "cor" sonora característica.</p>
       <p>O mesmo vale para a voz humana. Um tenor e uma soprano cantando a mesma nota compartilham a mesma fundamental, mas soam de formas completamente distintas. Isso acontece porque a musculatura vocal de um homem tem espessura e rigidez diferentes das de uma mulher — e o conjunto formado pelos pulmões e pela cabeça, que funciona como caixa de ressonância, também é biologicamente distinto entre os dois. Essas diferenças alteram a intensidade relativa dos harmônicos produzidos, resultando em timbres diferentes. É por isso que reconhecemos de imediato se é um tenor ou uma soprano — e também por isso identificamos a voz de uma pessoa mesmo ao telefone, numa gravação ou num ambiente barulhento: o timbre funciona como uma assinatura sonora.</p>
+      
       <aside class="glossario-callout">
         <strong>Timbre:</strong> característica sonora de uma fonte sonora. É o que permite reconhecer se uma nota está sendo tocada num violão ou num piano — ou identificar a voz de uma pessoa numa conversa. Resulta da intensidade relativa dos harmônicos produzidos por cada fonte sonora.
       </aside>
@@ -271,6 +273,7 @@
       <h2>Consonância e Dissonância</h2>
       <p>Agora, vamos analisar o que acontece quando duas ou mais notas são tocadas ao mesmo tempo — e como nosso ouvido percebe essa combinação.</p>
       <p>Veja na tabela abaixo os harmônicos gerados quando pressionamos a nota Lá 2 (110 Hz) em um piano. Cada harmônico corresponde a uma nota musical reconhecível:</p>
+      
       <div class="tabela-wrapper">
         <p class="tabela-titulo">Tabela 3: harmônicos gerados pela nota Lá 2 (110 Hz) com as notas musicais correspondentes.</p>
         <table>
@@ -293,24 +296,29 @@
       <p>Essa tabela revela algo importante: ao tocar uma única nota, o piano não produz apenas aquela frequência. Quando a tecla do Lá 2 é pressionada, além da nota fundamental em 110 Hz, soam simultaneamente — com volume mais baixo — as frequências dos harmônicos: 220 Hz, 330 Hz, 440 Hz, e assim por diante.</p>
       
       <figure>
-        <img src="teclado_la2.svg" alt="Teclas do piano, Lá 2 indicado" style="max-width: 100%; height: auto; display: block;">
+        <img src="teclado_la2.svg" alt="Teclas do piano, Lá 2 indicado" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
         <figcaption>Nota Lá 2 no piano.</figcaption>
       </figure>
+      
       <p>Se tocarmos a tecla do Lá 2 e, ao mesmo tempo, a tecla Lá 3 que produz 220 Hz — o Lá na oitava<sup class="ref-nota"><a href="#nota-4" id="ref-nota-4">[4]</a></sup> acima, ou seja, a repetição da mesma nota numa oitava acima —, nosso ouvido percebe que os dois sons combinam. Isso acontece porque aquela frequência de 220 Hz já estava presente, em volume mais baixo, dentro do Lá 2. Dizemos que as duas notas são consonantes. Chamamos isso de consonância.</p>
 
       <figure>
-        <img src="teclado_la2_la3.svg" alt="Teclas do piano, Lá 2 e Lá 3 indicados" style="max-width: 100%; height: auto; display: block;">
+        <img src="teclado_la2_la3.svg" alt="Teclas do piano, Lá 2 e Lá 3 indicados" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
         <figcaption>As notas Lá 2 e Lá 3 tocadas juntas soam harmoniosas aos nossos ouvidos.</figcaption>
       </figure>
 
       <aside class="glossario-callout">
         <strong>Consonância:</strong> fenômeno perceptivo em que duas ou mais notas, tocadas juntas, combinam ao ouvido. Notas consonantes tendem a compartilhar harmônicos entre si.
       </aside>
+      
       <p>Observando a tabela com mais atenção, vemos que, até o 5º harmônico, além das repetições do Lá em oitavas diferentes, aparecem também as notas Mi e Dó♯. Se tocarmos essas três notas juntas no piano — Lá, Dó♯ e Mi —, elas soarão consonantes ao ouvido. Esse som harmonioso é o que chamamos de <strong>acorde de Lá maior</strong>. A mesma lógica se aplica a outros acordes: o acorde de Dó maior, por exemplo, é formado pelas notas Dó, Mi e Sol. Os acordes são estudados na <strong>Harmonia</strong> <em>(ver artigo: Harmonia)</em>.</p>
+      
       <aside class="glossario-callout">
         <strong>Harmonia:</strong> em teoria musical, o estudo de como os acordes se formam e se relacionam entre si.
       </aside>
-      <p>O oposto também vale: há combinações de notas que o ouvido percebe como tensas ou ásperas — as chamadas <strong>dissonâncias</strong>. Lá e Si♭, por exemplo, tocados juntos, criam essa sensação de atrito. Isso acontece porque os harmônicos dessas duas notas não coincidem — em vez de se reforçarem, eles interferem uns nos outros. A diferença entre consonância e dissonância, e o papel que ela desempenha na música, será o assunto de outro artigo.</p>
+      
+      <p>O oposto também vale: há combinações de notas que o ouvido percebe como tensas ou ásperas — as chamadas <strong>dissonâncias</strong>. Lá e Si♭, por exemplo, tocadas juntas, criam essa sensação de atrito. Isso acontece porque os harmônicos dessas duas notas não coincidem — em vez de se reforçarem, eles interferem uns nos outros. A diferença entre consonância e dissonância, e o papel que ela desempenha na música, será o assunto de outro artigo.</p>
+      
       <aside class="glossario-callout">
         <strong>Dissonância:</strong> fenômeno perceptivo em que duas ou mais notas, tocadas juntas, criam sensação de tensão ou atrito ao ouvido. Notas dissonantes tendem a não compartilhar harmônicos entre si.
       </aside>
@@ -326,7 +334,7 @@
       <h2 id="titulo-notas">Notas</h2>
       <ol>
         <li id="nota-1">Um som <strong>agudo</strong> é aquele que percebemos como "alto" em termos de altura musical — não de volume, mas de posição na escala. O pio de um pássaro, o apito de uma chaleira ou as notas mais altas de uma flauta são exemplos de sons agudos. Mulheres e crianças tendem a ter vozes mais agudas do que homens. <a href="#ref-nota-1" class="voltar-texto" aria-label="Voltar ao texto">↩</a></li>
-        <li id="nota-2">Um som <strong>grave</strong> é aquele que percebemos como "baixo" em termos de altura musical. O ronco de motor, o bumbo de uma bateria ou as notas mais baixas de um contrabaixo são exemplos de sons graves. Homens tendem a ter vozes mais graves do que mulheres e crianças. <a href="#ref-nota-2" class="voltar-texto" aria-label="Voltar ao texto">↩</a></li>
+        <li id="nota-2">Um som <strong>grave</strong> é aquele que percebemos como "baixo" em termos de altura musical. O ronco de um motor, o bumbo de uma bateria ou as notas mais baixas de um contrabaixo são exemplos de sons graves. Homens tendem a ter vozes mais graves do que mulheres e crianças. <a href="#ref-nota-2" class="voltar-texto" aria-label="Voltar ao texto">↩</a></li>
         <li id="nota-3">Para fins didáticos, este artigo associa as frequências dos harmônicos a nomes de notas usando o referencial da <strong>afinação justa</strong>. É por isso que o 3º harmônico de Lá 2 corresponde a Mi 4, e o 5º harmônico a Dó♯ 5. Em outro artigo, será discutido o conceito de <strong>temperamento igual</strong> e como ele afeta essas frequências na prática. <a href="#ref-nota-3" class="voltar-texto" aria-label="Voltar ao texto">↩</a></li>
         <li id="nota-4">A <strong>oitava</strong> é o intervalo entre duas notas de mesmo nome — como dois Lás — em que a mais aguda vibra exatamente no dobro da frequência da mais grave. Apesar de serem notas em alturas diferentes, o ouvido as percebe como muito próximas em identidade — tanto que recebem o mesmo nome. Um exemplo cotidiano: quando homens e mulheres cantam juntos a mesma melodia, cada um na região média de conforto da sua voz, estão naturalmente cantando a uma oitava de distância. A melodia é reconhecida como a mesma por todos. <a href="#ref-nota-4" class="voltar-texto" aria-label="Voltar ao texto">↩</a></li>
       </ol>
@@ -359,12 +367,11 @@
 </footer>
 
 <script>
-// Força recarregamento de imagens para evitar cache (replicando a lógica do ?v=Date.now())
+// Força recarregamento de imagens para evitar cache
 document.addEventListener("DOMContentLoaded", () => {
   const imagens = document.querySelectorAll('img');
   const timestamp = Date.now();
   imagens.forEach(img => {
-    // Aplica o timestamp apenas nas imagens locais (como os SVGs)
     if (img.src && !img.src.includes('?v=')) {
       img.src = img.src + '?v=' + timestamp;
     }
@@ -391,7 +398,7 @@ btnTema.addEventListener('click', () => {
   }
 });
 
-// Lógica do Glossário (já existente)
+// Lógica do Glossário
 const glossarioDemo={
   'harmonicos':'Componentes sonoros que vibram em múltiplos inteiros da frequência fundamental.',
   'serie-harmonica':'Conjunto formado pela fundamental e por todos os seus harmônicos.',
